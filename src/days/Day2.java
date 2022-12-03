@@ -35,11 +35,7 @@ public class Day2 extends Day {
 			int res = s[1].charAt(0) - 'X';
 			int me = (opp + res + 2) % 3;
 			score += me + 1;
-			if(me == opp) {
-				score += 3;
-			} else if((opp+1)%3 == me) {
-				score += 6;
-			}
+			score += 3*res;
 		}
 		return score;
 	}
