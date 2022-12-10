@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Day7 extends Day {
 
@@ -87,7 +88,7 @@ public class Day7 extends Day {
 			if(isDir() && getSize() < size) {
 				nodes.add(this);
 			}
-			nodes.addAll(children.values().stream().flatMap(n -> n.getDirsBelow(size).stream()).toList());
+			nodes.addAll(children.values().stream().flatMap(n -> n.getDirsBelow(size).stream()).collect(Collectors.toList()));
 			return nodes;
 		}
 
